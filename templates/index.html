@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GitHub Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🚀 GitHub Profile Strength Analyzer</h1>
+    <p>Know how recruiters see your GitHub</p>
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="Enter GitHub Username" required>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if data %}
+    <div class="card">
+        <h2>📊 Results</h2>
+        <p><b>Total Repos:</b> {{ data.total_repos }}</p>
+        <p><b>Total Stars:</b> {{ data.total_stars }}</p>
+        <p><b>Score:</b> {{ data.score }}/100</p>
+        <p><b>Level:</b> {{ data.level }}</p>
+
+        <h3>⚠ Issues</h3>
+        <ul>
+            {% for issue in data.issues %}
+                <li>{{ issue }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>💡 Suggestions</h3>
+        <ul>
+            {% for s in data.suggestions %}
+                <li>{{ s }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>

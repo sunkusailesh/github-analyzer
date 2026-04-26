@@ -19,4 +19,9 @@ A simple web app that analyzes GitHub profiles and gives a score, level, and ins
 ```bash
 pip install -r requirements.txt
 python app.py
+
+
+---
+
+## 🎥 Demo Video
 https://drive.google.com/file/d/1GCwnde9k2rhvwpJy6Styx6-ALEuWd1x9/view?usp=drivesdk
